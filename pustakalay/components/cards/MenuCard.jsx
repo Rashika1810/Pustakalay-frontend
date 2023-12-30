@@ -12,7 +12,7 @@ const MenuCard = () => {
     <div className='flex flex-col gap-14'>
       <div className='flex justify-center gap-8'>
         
-        <Link href="/AdminLogin" className='flex flex-col cursor-pointer border-2 gap-4 bg-amber-600 hover:bg-amber-500 hover:text-white text-amber-50 p-4 justify-center items-center shadow-xl w-56 h-56 rounded-lg'>
+        <Link href="/StudentRegister" className='flex flex-col cursor-pointer border-2 gap-4 bg-amber-600 hover:bg-amber-500 hover:text-white text-amber-50 p-4 justify-center items-center shadow-xl w-56 h-56 rounded-lg'>
           <div>
             <PiStudentBold size={100}/>
             </div>

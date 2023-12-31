@@ -26,12 +26,12 @@ const page = () => {
       const userData = localStorage.getItem('user');
 
 if (userData) {
-  const userData = JSON.parse(userData);
+ userData = JSON.parse(userData);
 
   // Access the token from the user data
   const token = userData.token;
   
-  const resp = await axios.post('http://pustakalay-backend.vercel.app/librarian/register/student', formData, {
+  const resp = await axios.post('https://pustakalay-backend.vercel.app/librarian/register/student', formData, {
     headers: {
       'Content-Type': 'application/json',
       'Authorization': `Token ${token}`
@@ -127,7 +127,7 @@ else{
   </div>
   
 <div className='flex justify-center '>
-    <button onClick={handleStudentRegister} type='submit' className='border-2 rounded-2xl p-2 hover:bg-amber-700 hover:text-amber-50 border-amber-700 text-amber-800 text-center w-20'>Submit</button>
+    <button onClick={handleStudentRegister} className='border-2 rounded-2xl p-2 hover:bg-amber-700 hover:text-amber-50 border-amber-700 text-amber-800 text-center w-20'>Submit</button>
 </div>
 </div>
         </form>

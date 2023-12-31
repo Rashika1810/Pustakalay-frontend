@@ -30,7 +30,7 @@ const MenuCard = () => {
             <div className='flex flex-col items-center'>
 
           <div className='font-semibold text-xl'>Student</div>
-          <div className='font-semibold text-xl'></div>
+          <div className='font-semibold text-xl invisible'>Details</div>
             </div>
         </Link>
         

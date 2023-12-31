@@ -5,56 +5,56 @@ import React, { useState } from 'react'
 
 const page = () => {
 
-  const[formData,setFormData]=useState({
-    email :'',
-    name:'',
-    password:'',
-    branch:'',
-    batch:'',
-    reg_no:'',
-    dob:'',
-    gender:'',
-    phone:'',
+  const [formData, setFormData] = useState({
+    email: '',
+    name: '',
+    password: '',
+    branch: '',
+    batch: '',
+    reg_no: '',
+    dob: '',
+    gender: '',
+    phone: '',
   })
 
-  const handleChange=(e)=>{
-    setFormData({...formData,[e.target.name]:e.target.value});
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   }
 
-  const handleStudentRegister=async()=>{
+  const handleStudentRegister = async () => {
     try {
       const userData = localStorage.getItem('user');
 
 if (userData) {
- userData = JSON.parse(userData);
+  const userData = JSON.parse(userData);
 
   // Access the token from the user data
   const token = userData.token;
   
-  const resp = await axios.post('https://pustakalay-backend.vercel.app/librarian/register/student', formData, {
+  const resp = await axios.post('http://pustakalay-backend.vercel.app/librarian/register/student', formData, {
     headers: {
       'Content-Type': 'application/json',
       'Authorization': `Token ${token}`
     }
   });
 
-  console.log(resp);
-}
-else{
-  console.log('error')
-}
-      
-      
+        console.log(resp);
+      }
+      else {
+        console.log('error')
+      }
+
+
     } catch (error) {
-      console.log("error",error);
+      console.log("error", error);
     }
   }
 
 
   return (
     <div>
-      <Navbar/>
-    <div className='p-10'>
+      <Navbar />
+      <div className='p-10'>
         <div className='text-center text-4xl font-semibold text-amber-600 mb-10'>Register a New Student</div>
         <form>
 
@@ -127,11 +127,11 @@ else{
   </div>
   
 <div className='flex justify-center '>
-    <button onClick={handleStudentRegister} className='border-2 rounded-2xl p-2 hover:bg-amber-700 hover:text-amber-50 border-amber-700 text-amber-800 text-center w-20'>Submit</button>
+    <button onClick={handleStudentRegister} type='submit' className='border-2 rounded-2xl p-2 hover:bg-amber-700 hover:text-amber-50 border-amber-700 text-amber-800 text-center w-20'>Submit</button>
 </div>
 </div>
         </form>
-</div>
+      </div>
     </div>
   )
 }

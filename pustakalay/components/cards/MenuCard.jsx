@@ -23,17 +23,17 @@ const MenuCard = () => {
             </div>
         </Link>
        
-        
-        <Link href="/AdminLogin" className='flex flex-col cursor-pointer border-2 gap-4 bg-amber-600 hover:bg-amber-500 hover:text-white text-amber-50 p-4 justify-center items-center shadow-xl w-56 h-56 rounded-lg'>
+        <Link  href="/AdminLogin" className='flex flex-col cursor-pointer border-2 gap-4 bg-amber-600 hover:bg-amber-500 hover:text-white text-amber-50 p-4 justify-center items-center shadow-xl w-56 h-56 rounded-lg'>
           <div>
-            <TbBooks size={100}/>
+            <CgProfile size={100}/>
             </div>
             <div className='flex flex-col items-center'>
 
-          <div className='font-semibold text-xl'>Issue</div>
-          <div className='font-semibold text-xl'>Books</div>
+          <div className='font-semibold text-xl'>Student</div>
+          <div className='font-semibold text-xl'></div>
             </div>
         </Link>
+        
         <Link href="/AdminLogin" className='flex flex-col cursor-pointer border-2 gap-4 bg-amber-600 hover:bg-amber-500 hover:text-white text-amber-50 p-4 justify-center items-center shadow-xl w-56 h-56 rounded-lg'>
           <div>
             <BiBookAdd size={100}/>
@@ -67,16 +67,17 @@ const MenuCard = () => {
           <div className='font-semibold text-xl'>Position of Books</div>
         </div>
             </Link>
-        <Link  href="/AdminLogin" className='flex flex-col cursor-pointer border-2 gap-4 bg-amber-600 hover:bg-amber-500 hover:text-white text-amber-50 p-4 justify-center items-center shadow-xl w-56 h-56 rounded-lg'>
+            <Link href="/AdminLogin" className='flex flex-col cursor-pointer border-2 gap-4 bg-amber-600 hover:bg-amber-500 hover:text-white text-amber-50 p-4 justify-center items-center shadow-xl w-56 h-56 rounded-lg'>
           <div>
-            <CgProfile size={100}/>
+            <TbBooks size={100}/>
             </div>
             <div className='flex flex-col items-center'>
 
-          <div className='font-semibold text-xl'>Student</div>
-          <div className='font-semibold text-xl'>Profile</div>
+          <div className='font-semibold text-xl'>Return</div>
+          <div className='font-semibold text-xl'>Books</div>
             </div>
         </Link>
+        
         <Link href="/AdminLogin" className='flex flex-col cursor-pointer border-2 gap-4 bg-amber-600 hover:bg-amber-500 hover:text-white text-amber-50 p-4 justify-center items-center shadow-xl w-56 h-56 rounded-lg'>
           <div>
             <TbBooksOff size={100}/>

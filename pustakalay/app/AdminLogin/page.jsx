@@ -2,16 +2,19 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
+import Loader from '@/components/Loader';
 
 
 
 const page = () => {
 	const { push } = useRouter();
+	const[isLoading,setIsLoading]=useState(false)
 	
 	const [email,setEmail]=useState("");
 	const[password,setPassword]=useState("");
 	
 	const handleLogin=async()=>{
+		setIsLoading(true)
 		try {
 			const resp=await axios.post('https://pustakalay-backend.vercel.app/librarian/login',{
 			email,password
@@ -22,6 +25,8 @@ const page = () => {
 		{
 			console.log('login successful');
 			localStorage.setItem('user',JSON.stringify(resp.data.data));
+			setIsLoading(false)
+
 			push('/');
 
 		}
@@ -31,6 +36,7 @@ const page = () => {
 			
 		} catch (error) {
 			console.log("error",error);
+			setIsLoading(false)
 		}
 		
 	}
@@ -42,7 +48,9 @@ const page = () => {
 		}
 	},[])
   return (
-    <div className='mt-3'>
+	<div>
+		{isLoading && (<Loader/>)}
+		 <div className='mt-3'>
        <h1 className="bg-gradient-to-r from-amber-200 to-amber-600 font-semibold text-transparent text-5xl text-center bg-clip-text">Welcome to Pustakalay</h1>
 <div className="min-h-screen py-6 flex flex-col justify-center sm:py-12">
 	<div className="relative py-3 sm:max-w-xl sm:mx-auto">
@@ -74,6 +82,8 @@ const page = () => {
 	</div>
 </div>
     </div>
+	</div>
+   
   )
 }
 

@@ -12,7 +12,7 @@ const Navbar = () => {
     push('/AdminLogin');
   }
   return (
-    <div className='w-[100%] h-[85%] no-scrollbar'>
+    <div className='h-10 w-auto'>
 
     <nav className=" bg-amber-700 p-3 flex justify-between items-center shadow-2xl">
     <Link href="/" className="flex items-center ">

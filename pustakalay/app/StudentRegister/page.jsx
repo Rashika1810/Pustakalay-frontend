@@ -28,7 +28,7 @@ const page = () => {
         const user = JSON.parse(userData);
         const token = user.token;
 
-        const resp = await axios.post('https://pustakalay-backend.vercel.app/librarian/register/student', formData, {
+        const resp = await axios.post('https://pustakalay-backend.vercel.app/librarian/students', formData, {
           headers: {
             'Content-Type': 'application/json',
             'Authorization': `Token ${token}`,
@@ -61,7 +61,6 @@ const page = () => {
 
   return (
     <div>
-      <Navbar />
       <div className='p-10'>
         <div className='text-center text-4xl font-semibold text-amber-600 mb-10'>Register a New Student</div>
         <form>

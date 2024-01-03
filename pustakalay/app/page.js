@@ -13,7 +13,6 @@ export default function Home() {
   }, []);
   return (
     <div>
-      <Navbar />
       <div className=" flex flex-col gap-5 p-10">
         <h1 className="text-7xl text-center font-semibold text-amber-600">
           {" "}

@@ -1,26 +1,15 @@
 'use client'
 import React, { useState } from 'react'
+import Modal from './cards/Modal'
 
 const Details = () => {
 
+    const [showModal,setShowModal]=useState(false);
 
+    const handleOnClose=()=>{
+        setShowModal(!showModal);
+    }
 
-    const [isModalOpen, setModalOpen] = useState(false);
-
-  const openModal = () => {
-    setModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setModalOpen(false);
-  };
-
-  const handleSubmit = (event) => {
-    // Handle form submission logic here
-    event.preventDefault();
-    // Additional logic can be added based on your requirements
-    closeModal();
-  };
   return (
     
         <div className='bg-gray-200 h-[32rem] w-[72rem] p-3 mx-auto'>
@@ -76,25 +65,11 @@ const Details = () => {
                     <div className='flex justify-between p-1'>
                         <div className='text-xl'>Books</div>
                         <div className='flex'>
-                            <button onClick={openModal} className=' cursor-pointer px-8 rounded-md bg-amber-600 text-amber-50'>Issue Book</button>
+                            <button onClick={()=>setShowModal(true)} className=' cursor-pointer px-8 rounded-md bg-amber-600 text-amber-50'>Issue Book</button>
                        </div>
                     </div>
 
-                    {isModalOpen && (
-        <div className="modal">
-          <div className="modal-content">
-            <span className="close" onClick={closeModal}>&times;</span>
-            <form onSubmit={handleSubmit}>
-              {/* Your form fields go here */}
-              <label>
-                Example Input:
-                <input type="text" />
-              </label>
-              <button type="submit">Submit</button>
-            </form>
-          </div>
-        </div>
-      )}
+                    <Modal onclose={handleOnClose} visible={showModal}/>
 
                     <div className='  border-2 border-gray-500 bg-white p-2'>
                         {/* issued books */}
